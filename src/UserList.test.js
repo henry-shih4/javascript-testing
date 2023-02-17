@@ -1,4 +1,4 @@
-import { render, screen} from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 
 import UserList from "./components/UserList";
 
@@ -35,4 +35,18 @@ test("render the email and name of each user", () => {
     expect(name).toBeInTheDocument();
     expect(email).toBeInTheDocument();
   }
+});
+
+test("find one list element", () => {
+  render(<UserList />);
+  const list = screen.getByRole("list");
+
+  expect(list).toBeInTheDocument();
+});
+
+test("find three list items", () => {
+  render(<UserList />);
+
+  const items = screen.getAllByRole("listitem");
+  expect(items).toHaveLength(3);
 });

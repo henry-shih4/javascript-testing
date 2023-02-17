@@ -24,6 +24,14 @@ export default function UserList(props) {
               : null}
           </tbody>
         </table>
+
+        <div>
+          <ul>
+            <li>red</li>
+            <li>green</li>
+            <li>blue</li>
+          </ul>
+        </div>
       </div>
     </>
   );
